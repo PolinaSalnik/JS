@@ -1,4 +1,4 @@
-#error { 
+.error { 
     font-size: 17px; 
     font-family: Verdana, Arial, Helvetica, sans-serif; 
     color: #333366;
@@ -13,7 +13,7 @@
     margin-bottom: 30px;
    }
 
-   #message { 
+   .msg { 
     font-size: 17px; 
     font-family: Verdana, Arial, Helvetica, sans-serif; 
     color: #333366;
@@ -28,7 +28,7 @@
     margin-bottom: 30px;
    }
 
-   #hello { 
+   .alert { 
     font-size: 17px; 
     font-family: Verdana, Arial, Helvetica, sans-serif; 
     color: #333366;

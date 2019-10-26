@@ -1,46 +1,30 @@
-var err = document.getElementById('notification_error')
-console.log(err);
-
-function showError() {
-    var value = err.getAttribute('hidden');
-    if (value != 'hidden') {
-        err.setAttribute('hidden', 'hidden');
-    } 
-    else {
-        err.setAttribute('hidden', 'notHidden');
+function getParametr (alert){
+        if(alert=(new RegExp('[?&]'+encodeURIComponent(alert)+'=([^&]*)')).exec(location.search))
+           return decodeURIComponent(alert[1]);
     }
-} 
-setInterval (showError, 5000);
-
-
-
-var mess = document.getElementById('notification_message')
-console.log(mess);
-
-function showMessage() {
-    var value = mess.getAttribute('hidden');
-    if (value != 'hidden') {
-        mess.setAttribute('hidden', 'hidden');
-    } 
-    else {
-        mess.setAttribute('hidden', 'notHidden');
+    
+    checkUrl();
+    function checkUrl() {
+       var parametr = getParametr ('alert');
+       Showpopup(parametr);
     }
-} 
-setInterval (showMessage, 10000);
-
-
-
-
-var hi = document.getElementById('notification_hello')
-console.log(hi);
-
-function showHi() {
-    var value = hi.getAttribute('hidden');
-    if (value != 'hidden') {
-        hi.setAttribute('hidden', 'hidden');
-    } 
-    else {
-        hi.setAttribute('hidden', 'notHidden');
+    
+    function Showpopup (type, string) {
+        var div = document.querySelector('div');
+        div.removeAttribute('class', 'hidden');
+        div.setAttribute('class', type);
+    
+        if (type === 'alert') {
+            div.innerHTML = string || 'Hi, visitor!';
+        }
+        else if(type === 'error'){
+            div.innerHTML = string || 'Error!';
+        }
+        else if(type === 'msg'){
+            div.innerHTML = string || 'Your message has been successfully sent!';
+        }
+        setTimeout(function(){
+             div.setAttribute('class', 'hidden');
+        }, 5000);
     }
-} 
-setInterval (showHi, 15000);
+    
