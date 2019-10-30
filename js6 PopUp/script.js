@@ -1,12 +1,12 @@
-var popUp = document.getElementById('myPopUp');
+var myPopUp = document.getElementById('myPopUp');
 var btn = document.getElementById('myBtn');
 var span = document.getElementsByClassName('close')[0];
 
 btn.onclick = function () {
-    popUp.style.display = "block";
+    myPopUp.style.display = "block";
 }
 span.onclick = function () {
-    popUp.style.display = "none";
+    myPopUp.style.display = "none";
 }
 
 window.onclick = function(event) {
