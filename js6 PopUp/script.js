@@ -8,15 +8,10 @@ btn.onclick = function () {
 span.onclick = function () {
     popUp.style.display = "none";
 }
-window.onclick = function (event) {
-    if(event.target == popUP) {
-    popUp.style.display = "none";
+
+window.onclick = function(event) {
+    if (event.target == myPopUp ) {
+        myPopUp.style.display = "none";
     }
 }
-/*button.addEventListener('click', function(){
-    popUp.classList.remove('hidden');
-})
 
-span.addEventListener('click', function(){
-    popUp.classList.add('hidden');
-})*/
